@@ -1,1 +1,36 @@
 Spring Guide
+  * Installation: Spring Tools Suite 3
+    ** Link: http://spring.io/tools3/sts/all
+    ** Linux - Eclipse 4.9.0 - GTK 64bit
+      - Extract 'tar.gz' to Documents
+      - sts-3.9.6.RELEASE > STS
+        * Run STS
+!=
+  * Create New Project
+    * New > Spring Starter Project > Next > check 'web' dependencies > Finish
+      ** Force Update Maven to project
+        - Right Click Project > Maven > Update Project
+          -- Check lower right and wait to Finish
+          -- Double Check Problems tab, all errors must be removed
+      ** Result: Clean Project
+
+!=
+  * Run Simple Project in 'localhost:8080'
+    * File > New > Package > com.[] + .controllers
+    * Right Click Package '.controllers' > New > Class > 'Hello Controller' > Finish
+    * Add in top of 'public class HelloController' > @RestController and import
+        import org.springframework.web.bind.annotation.RestController;
+    * Add
+    @RequestMapping("/hello")
+    	public String Hello() {
+    		return "Hello, World";
+    	}
+    with 'import org.springframework.web.bind.annotation.RequestMapping;'
+
+    * Look for 'Boot Dashboard in the lower left and expand local
+    * click the project and Run, the STS Terminal must shows some build text
+    * Go to browser and type 'localhost:8080/hello'
+    * Done!
+
+!=
+  * Dependency Injection (IoC)
